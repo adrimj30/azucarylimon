@@ -174,9 +174,22 @@ footer {
     font-size: 0.9rem;
 }
 
+/* === AJUSTE TAMAÑO TARTAS (CARRUSEL) === */
+.carrusel-container {
+  max-width: 500px;     /* ancho total del carrusel */
+  margin: 20px auto;    /* centrado */
+  position: relative;
+}
+
+.carrusel-container img {
+  width: 100%;          /* ocupa todo el contenedor */
+  height: 300px;        /* ALTO de la tarta */
+  object-fit: cover;    /* no se deforman */
+  border-radius: 12px;
+}
+
 /* Responsivo para móviles */
 @media (max-width: 600px) {
     .tarjeta-plato {
         flex-direction: column; /* En móvil, foto debajo del texto */
-    }
-    .
+}
