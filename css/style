@@ -1,0 +1,182 @@
+/* Paleta de colores: Azul Pastel y Blanco */
+:root {
+    --azul-fondo: #e3f2fd;    /* Azul muy clarito */
+    --azul-medio: #90caf9;    /* Azul pastel para acentos */
+    --azul-oscuro: #1e88e5;   /* Azul para textos y botones */
+    --blanco: #ffffff;
+    --borde-retro: 4px solid #90caf9;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--azul-fondo);
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Estilo Vintage */
+header {
+    background-color: var(--blanco);
+    text-align: center;
+    padding: 40px 20px;
+    border-bottom: 6px double var(--azul-oscuro);
+}
+
+header h1 {
+    font-size: 3rem;
+    color: var(--azul-oscuro);
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-family: 'Georgia', serif; /* Toque más elegante/amanerado */
+}
+
+header p {
+    color: var(--azul-medio);
+    font-style: italic;
+    font-size: 1.2rem;
+}
+
+/* Pestañas (Tabs) */
+.tabs {
+    display: flex;
+    justify-content: center;
+    background-color: var(--azul-oscuro);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.tab-btn {
+    padding: 15px 25px;
+    border: none;
+    background: none;
+    color: var(--blanco);
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.tab-btn:hover {
+    background-color: var(--azul-medio);
+}
+
+.tab-btn.active {
+    background-color: var(--blanco);
+    color: var(--azul-oscuro);
+}
+
+/* Contenedor Principal */
+main {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+.tab-content {
+    background-color: var(--blanco);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+h2 {
+    text-align: center;
+    color: var(--azul-oscuro);
+    border-bottom: 2px solid var(--azul-fondo);
+    padding-bottom: 10px;
+}
+
+/* TARJETAS: Texto Izquierda, Foto Derecha */
+.tarjeta-plato {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--blanco);
+    border: 2px solid var(--azul-fondo);
+    margin-bottom: 20px;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+
+.tarjeta-plato:hover {
+    transform: scale(1.02);
+    border-color: var(--azul-medio);
+}
+
+.info {
+    padding: 20px;
+    flex: 1; /* Toma todo el espacio de la izquierda */
+}
+
+.info h3 {
+    margin: 0 0 10px 0;
+    color: var(--azul-oscuro);
+}
+
+.precio {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: var(--azul-oscuro);
+    font-size: 1.2rem;
+}
+
+.foto {
+    width: 200px; /* Tamaño fijo para la imagen */
+    height: 150px;
+}
+
+.foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen sin deformarla */
+}
+
+/* Formulario de Contacto */
+form {
+    display: grid;
+    gap: 15px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--azul-medio);
+    border-radius: 5px;
+    font-family: inherit;
+}
+
+.send-btn {
+    background-color: var(--azul-oscuro);
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.send-btn:hover {
+    background-color: #1565c0;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: var(--azul-oscuro);
+    font-size: 0.9rem;
+}
+
+/* Responsivo para móviles */
+@media (max-width: 600px) {
+    .tarjeta-plato {
+        flex-direction: column; /* En móvil, foto debajo del texto */
+    }
+    .
