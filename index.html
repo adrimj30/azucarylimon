@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafetería & Repostería Artesanal</title>
+</head>
+<body>
+
+    <header>
+        <h1>Cafetería Nombre del Local</h1>
+        <p>Tartas artesanales y desayunos con amor</p>
+    </header>
+
+    <nav class="tabs">
+        <button class="tab-btn active" onclick="openCategory(event, 'desayunos')">Desayunos</button>
+        <button class="tab-btn" onclick="openCategory(event, 'cafe-te')">Café y Té</button>
+        <button class="tab-btn" onclick="openCategory(event, 'meriendas')">Meriendas</button>
+        <button class="tab-btn" onclick="openCategory(event, 'contacto')">Encargos de Tartas</button>
+    </nav>
+
+    <main>
+        <section id="desayunos" class="tab-content">
+            <h2>Nuestros Desayunos</h2>
+            
+            <div class="tarjeta-plato">
+                <div class="info">
+                    <h3>Tostada con Aguacate</h3>
+                    <p>Pan de masa madre, aguacate laminado, semillas y un toque de lima.</p>
+                    <span class="precio">4,50 €</span>
+                </div>
+                <div class="foto">
+                    <img src="https://via.placeholder.com/150" alt="Tostada Aguacate">
+                </div>
+            </div>
+
+            <div class="tarjeta-plato">
+                <div class="info">
+                    <h3>Bowl de Yogur y Fruta</h3>
+                    <p>Yogur griego natural con granola casera y frutas de temporada.</p>
+                    <span class="precio">5,20 €</span>
+                </div>
+                <div class="foto">
+                    <img src="https://via.placeholder.com/150" alt="Bowl Yogur">
+                </div>
+            </div>
+        </section>
+
+        <section id="cafe-te" class="tab-content" style="display:none;">
+            <h2>Cafés y Tés Especiales</h2>
+            
+            <div class="tarjeta-plato">
+                <div class="info">
+                    <h3>Cappuccino Italiano</h3>
+                    <p>Café de especialidad con espuma de leche cremosa y cacao.</p>
+                    <span class="precio">2,80 €</span>
+                </div>
+                <div class="foto">
+                    <img src="https://via.placeholder.com/150" alt="Cappuccino">
+                </div>
+            </div>
+
+            <div class="tarjeta-plato">
+                <div class="info">
+                    <h3>Té Matcha Latte</h3>
+                    <p>Matcha ceremonial con leche de avena o vaca.</p>
+                    <span class="precio">3,50 €</span>
+                </div>
+                <div class="foto">
+                    <img src="https://via.placeholder.com/150" alt="Matcha">
+                </div>
+            </div>
+        </section>
+
+        <section id="meriendas" class="tab-content" style="display:none;">
+            <h2>Meriendas Dulces</h2>
+            
+            <div class="tarjeta-plato">
+                <div class="info">
+                    <h3>Porción de Tarta de Queso</h3>
+                    <p>Nuestra famosa tarta horneada estilo "La Viña".</p>
+                    <span class="precio">4,00 €</span>
+                </div>
+                <div class="foto">
+                    <img src="https://via.placeholder.com/150" alt="Tarta Queso">
+                </div>
+            </div>
+
+            <div class="tarjeta-plato">
+                <div class="info">
+                    <h3>Brownie con Nueces</h3>
+                    <p>Chocolate belga 70% con nueces de California.</p>
+                    <span class="precio">3,80 €</span>
+                </div>
+                <div class="foto">
+                    <img src="https://via.placeholder.com/150" alt="Brownie">
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="tab-content" style="display:none;">
+            <h2>Encarga tu Tarta Personalizada</h2>
+            <p>Rellena el formulario y te responderemos para confirmar los detalles de tu tarta.</p>
+            
+            <form action="mailto:correo@correo.com" method="post" enctype="text/plain">
+                <div class="form-group">
+                    <label for="nombre">Nombre completo:</label><br>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="tipo-tarta">Tipo de tarta deseada:</label><br>
+                    <select id="tipo-tarta" name="tipo-tarta">
+                        <option value="queso">Tarta de Queso</option>
+                        <option value="chocolate">Tarta de Chocolate</option>
+                        <option value="zanahoria">Carrot Cake</option>
+                        <option value="frutas">Tarta de Frutas</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="fecha">Fecha de recogida:</label><br>
+                    <input type="date" id="fecha" name="fecha" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="mensaje">Detalles adicionales (alergias, decoración, etc.):</label><br>
+                    <textarea id="mensaje" name="mensaje" rows="4"></textarea>
+                </div>
+
+                <button type="submit" class="send-btn">Enviar Solicitud</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Cafetería Nombre del Local - Calle Falsa 123</p>
+    </footer>
+
+    <script>
+        function openCategory(evt, categoryName) {
+            var i, tabContent, tabBtns;
+            
+            // Ocultar todo el contenido
+            tabContent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabContent.length; i++) {
+                tabContent[i].style.display = "none";
+            }
+
+            // Quitar clase activa de los botones
+            tabBtns = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tabBtns.length; i++) {
+                tabBtns[i].className = tabBtns[i].className.replace(" active", "");
+            }
+
+            // Mostrar la categoría actual y marcar el botón como activo
+            document.getElementById(categoryName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+
+</body>
+</html>
